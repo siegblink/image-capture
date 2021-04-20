@@ -93,7 +93,7 @@ export default function App() {
 
     // Execute clean up function.
     return () => {
-      if (Boolean(mediaStream)) {
+      if (mediaStream) {
         mediaStream.getTracks().forEach((track) => {
           track.stop();
         });
@@ -141,7 +141,7 @@ export default function App() {
    * Stop streaming.
    */
   const stopStreaming = () => {
-    if (Boolean(mediaStream)) {
+    if (mediaStream) {
       // Stop each 'track' from the 'Media stream'.
       mediaStream.getTracks().forEach((track) => {
         track.stop();
@@ -156,7 +156,7 @@ export default function App() {
    * Capture snapshot.
    */
   const captureSnapshot = () => {
-    if (Boolean(mediaStream)) {
+    if (mediaStream) {
       // Create a '2D canvas context'.
       const canvasContext = canvasRef?.current?.getContext("2d");
 
